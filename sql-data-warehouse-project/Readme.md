@@ -94,9 +94,11 @@ Password: MySQL@1234
 
 ```bash
 docker exec -it sql_server /bin/bash
-ls /data/source_crm
 ```
-
+```bash
+ls /data/source_crm
+ls /data/source_erp
+```
 ---
 
 ### 7. Example `BULK INSERT` Query
