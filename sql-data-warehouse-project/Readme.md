@@ -101,21 +101,6 @@ ls /data/source_erp
 ```
 ---
 
-### 7. Example `BULK INSERT` Query
-
-```sql
-BULK INSERT bronze.load_bronze
-FROM '/data/source_crm/cust_info.csv'
-WITH (
-    FIRSTROW = 2,
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-    TABLOCK
-);
-```
-
----
-
 ## 🧼 Cleanup
 
 To stop and remove the container:
