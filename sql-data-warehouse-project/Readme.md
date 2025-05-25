@@ -1,8 +1,4 @@
-Here’s a complete `README.md` for your SQL Server Docker project — cross-platform compatible with **macOS, Windows, and Linux**.
 
----
-
-## 📘 README.md
 
 ```markdown
 # SQL Server Docker Project (Cross-Platform)
