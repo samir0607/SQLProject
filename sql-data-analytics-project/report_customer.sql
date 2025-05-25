@@ -77,32 +77,32 @@ SELECT
     customer_number,
     customer_name,
     age,
-    CASE 
-        WHEN age < 18 THEN 'Under 18'
-        WHEN age between 18 and 29 THEN '18-29'
-        WHEN age between 30 and 41 THEN '30-41'
-        WHEN age between 42 and 53 THEN '42-53'
-        WHEN age between 54 and 65 THEN '54-65'
-        ELSE 'Above 65'
-    END AS age_group,
-    CASE 
-        WHEN lifespan >= 12 AND total_sales > 6000 THEN 'VIP'
-        WHEN lifespan >= 12 THEN 'Regular'
-        ELSE 'New'
-    END AS customer_segment,
-    last_order_date,
-    DATEDIFF(month, last_order_date, GETDATE()) AS recency,
-    total_orders,
-    total_sales,
-    total_quantity,
-    total_products,
-    lifespan,
-    -- Compute average order value (AVO)
-    CASE WHEN total_sales = 0 THEN 0
-         ELSE total_sales/total_orders
-    END AS avg_order_value,
-    -- Compute average monthly spendings
-    CASE WHEN lifespan = 0 THEN total_sales
-         ELSE total_sales/lifespan
-    END AS average_monthly_spends
-    FROM customer_aggregation
+CASE 
+    WHEN age < 18 THEN 'Under 18'
+    WHEN age between 18 and 29 THEN '18-29'
+    WHEN age between 30 and 41 THEN '30-41'
+    WHEN age between 42 and 53 THEN '42-53'
+    WHEN age between 54 and 65 THEN '54-65'
+    ELSE 'Above 65'
+END AS age_group,
+CASE 
+    WHEN lifespan >= 12 AND total_sales > 6000 THEN 'VIP'
+    WHEN lifespan >= 12 THEN 'Regular'
+    ELSE 'New'
+END AS customer_segment,
+last_order_date,
+DATEDIFF(month, last_order_date, GETDATE()) AS recency,
+total_orders,
+total_sales,
+total_quantity,
+total_products,
+lifespan,
+-- Compute average order value (AVO)
+CASE WHEN total_sales = 0 THEN 0
+        ELSE total_sales/total_orders
+END AS avg_order_value,
+-- Compute average monthly spendings
+CASE WHEN lifespan = 0 THEN total_sales
+        ELSE total_sales/lifespan
+END AS average_monthly_spends
+FROM customer_aggregation
