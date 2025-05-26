@@ -71,7 +71,9 @@ WITH base_query AS(
         customer_name,
         age
 )
-
+/*---------------------------------------------------------------------------
+3) Segments and KPIs: Prepare the final report
+---------------------------------------------------------------------------*/
 SELECT
     customer_key,
     customer_number,
