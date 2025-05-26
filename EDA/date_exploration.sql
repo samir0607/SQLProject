@@ -15,16 +15,18 @@ Usage:
 
 -- Find the Dates of first and last orders
 -- Find How many years did the business sold
+-- Find the Dates of first and last orders
+-- Find How many years did the business sold
 SELECT 
 MIN(order_date) AS first_order_date,
 MAX(order_date) AS last_order_date,
-DATEDIFF(months, MIN(order_date), MAX(order_date)) AS order_ranges_months
+DATEDIFF(MONTH, MIN(order_date), MAX(order_date)) AS order_ranges_months
 FROM gold.fact_sales
 
 -- Find yongest and oldest customer age range
 SELECT
 MIN(birth_date) AS youngest_customer_birthdate,
-DATEDIFF(year, MIN(birth_date), GETDATE()) AS current_oldest_age,
+DATEDIFF(YEAR, MIN(birth_date), GETDATE()) AS current_oldest_age,
 MAX(birth_date) AS oldest_customer_birthdate,
-DATEDIFF(year, MAX(birth_date), GETDATE()) AS current_youngest_age
+DATEDIFF(YEAR, MAX(birth_date), GETDATE()) AS current_youngest_age
 FROM gold.dim_customers
