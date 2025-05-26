@@ -74,7 +74,7 @@ WITH base_query AS (
   3) Last Query: Generate final report
 ---------------------------------------------------------------------------*/
 SELECT
-product_key,
+    product_key,
     product_name,
     category,
     sub_category,
